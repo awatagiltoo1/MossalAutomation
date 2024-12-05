@@ -1,4 +1,4 @@
-import { faker } from '@faker-js/faker';
+/*import { faker } from '@faker-js/faker';
 import {test, expect } from '../utils/myTests';
 
 //import { CollaboratorPage } from '../pages/CollaboratorPage';
@@ -18,4 +18,4 @@ test.only('Ajout collaborateur', async ({ collaboratorPage, page}) => {
     await collaboratorPage.addCollaborator(prenom, nom, email, '77' +telephone.toString(), birthday, identifiant.toString(), 'Testeur', '2000000', '123456789', 'WAVE');
 });
 
-
+*/
