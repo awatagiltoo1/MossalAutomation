@@ -30,7 +30,7 @@ jobs:
     - name: Deploy Allure Report to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }} # Utilise le token GitHub Actions pour publier le rapport allure
+        github_token: ${{ secrets.GITHUB_TOKEN }} # Utilise le token GitHub Actions pour publier le rapport alluree
         publish_dir: ./allure-report
 
   #  - name: Notify Slack # Envoie une notification Slack avec le lien vers le rapport Allure. (détails configuration à voir sur le fichier README)

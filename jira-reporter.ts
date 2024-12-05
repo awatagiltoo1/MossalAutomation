@@ -32,7 +32,7 @@ class JiraReporter implements Reporter {
                     start: new Date().toISOString(),  // Start time of the test
                     finish: new Date().toISOString(),  // Finish time of the test
                     status: status,  // Test execution status (PASSED, FAILED, etc.)
-                    comment: `Test ${status === 'PASSED' ? 'passed' : 'failed'}.`,  // Additional comments
+                    comment: `Test ${status === 'PASSED' ? 'passed' : 'failed'}.`,  // Additional comment
                 });
                 // Debug: Log the current tests array
                 console.log('Current tests array:', this.tests);
