@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('connexion', async({ page})=>{
+test('@MA-15 connexion', async({ page})=>{
 
   await page.goto('https://app-dev.mossall.com/auth/login');
   await page.getByLabel('Email').fill('genieouzog+atos@gmail.com');
