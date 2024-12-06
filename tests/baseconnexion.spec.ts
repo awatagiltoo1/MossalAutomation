@@ -12,6 +12,7 @@ const telephone = faker.number.int({min: 1000000, max:9999999})
 const birthdayDate = faker.date.birthdate({ min: 18, max: 65, mode: 'age' });
 const birthday = birthdayDate.toISOString().split('T')[0];
 //const phoneNumber = faker.phone.number('76#######');
+//verifier si a nvelle branche a été créé
 
 
 test('@MA-1 Ajout collaborateur', async ({ collaboratorPage, page}) => {
