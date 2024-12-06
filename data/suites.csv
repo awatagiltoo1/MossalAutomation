@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","6683","Ajout collaborateur","webkit","Fri Dec 06 09:05:32 UTC 2024","passed","Fri Dec 06 09:05:39 UTC 2024","","baseconnexion.spec.ts","",""
+"","3818","Ajout collaborateur","firefox","Fri Dec 06 09:05:27 UTC 2024","passed","Fri Dec 06 09:05:30 UTC 2024","","baseconnexion.spec.ts","",""
+"","7285","Ajout collaborateur","chromium","Fri Dec 06 09:05:18 UTC 2024","passed","Fri Dec 06 09:05:26 UTC 2024","","baseconnexion.spec.ts","",""
