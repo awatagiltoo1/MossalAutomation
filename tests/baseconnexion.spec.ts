@@ -19,4 +19,18 @@ test('@MA-1 Ajout collaborateur', async ({ collaboratorPage, page}) => {
     await collaboratorPage.addCollaborator(prenom, nom, email, '77' +telephone.toString(), birthday, identifiant.toString(), 'Testeur', '2000000', '123456789', 'WAVE');
 });
 
+test('Rechercher un collaborateur', async ({ rechercheCollabPage, page}) => {
+    await rechercheCollabPage.RechercherdeCollab('3886');
+});
 
+test('Fonctionnalite Bouton Import Fichier', async ({ importerTelechargerCollabPage, page}) => {
+    await importerTelechargerCollabPage.ImportGeneralFichier();
+});
+
+test('Editer un collaborateur', async ({ editerCollabPage, page}) => {
+    await editerCollabPage.EditerCollaborateur(prenom, nom, birthday, 'gestionnaire', '500000');
+});
+
+test('Suspendre un collaborateur', async ({ suspendreCollabPage, page}) => {
+    await suspendreCollabPage.SuspendreCollaborateur();
+});
