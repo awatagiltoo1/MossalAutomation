@@ -34,3 +34,19 @@ test('Editer un collaborateur', async ({ editerCollabPage, page}) => {
 test('Suspendre un collaborateur', async ({ suspendreCollabPage, page}) => {
     await suspendreCollabPage.SuspendreCollaborateur();
 });
+
+test('Dashboard: Verification des paramètres du widget Echeances sur salaire', async ({ verificationParamEcheanceSurSalPage, page}) => {
+    await verificationParamEcheanceSurSalPage.VerificationParamEcheanceSurSal();
+});
+
+test('Dashboard: Verification de la vue d-ensemble du remboursement ', async ({ verificationDiagrammeVueEnsemblePage, page}) => {
+    await verificationDiagrammeVueEnsemblePage.VerificationDiagrammeVueEnsemble();
+});
+
+test('Dashboard: Verification tableau utilisateurs', async ({ verificationTableauStatutsPage, page}) => {
+    await verificationTableauStatutsPage.VerificationTableauStatuts();
+});
+
+test('Dashboard: Vérification des filtre sur le dashboard', async ({ filtrerSurDachboardPage, page}) => {
+    await filtrerSurDachboardPage.FiltrerSurDachboard();
+});

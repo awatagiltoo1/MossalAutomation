@@ -5,6 +5,10 @@ import { RechercheCollabPage } from '../pages/Collaborateurs/Collab/RechercheCol
 import {ImporterTelechargerCollabPage} from '../pages/Collaborateurs/Collab/ImporterTelechargerCollabPage';
 import { EditerCollabPage } from '../pages/Collaborateurs/Collab/EditerCollabPage';
 import { SuspendreCollabPage } from '../pages/Collaborateurs/Collab/SuspendreCollabPage';
+import { VerificationParamEcheanceSurSalPage } from '../pages/Collaborateurs/Dashboard/VerificationParamEcheanceSurSalPage';
+import {VerificationDiagrammeVueEnsemblePage} from '../pages/Collaborateurs/Dashboard/VerificationDiagrammeVueEnsemblePage'
+import { VerificationTableauStatutsPage } from '../pages/Collaborateurs/Dashboard/VerificationTableauStatutsPage';
+import {FiltrerSurDachboardPage} from '../pages/Collaborateurs/Dashboard/FiltrerSurDachboardPage'
 
 
 type TestFixtures = {
@@ -14,10 +18,11 @@ type TestFixtures = {
     importerTelechargerCollabPage: ImporterTelechargerCollabPage
     editerCollabPage: EditerCollabPage
     suspendreCollabPage: SuspendreCollabPage
-
-
+    verificationParamEcheanceSurSalPage: VerificationParamEcheanceSurSalPage
+    verificationDiagrammeVueEnsemblePage: VerificationDiagrammeVueEnsemblePage
+    verificationTableauStatutsPage: VerificationTableauStatutsPage
+    filtrerSurDachboardPage: FiltrerSurDachboardPage
 }
-
 
 export const test = base.extend<TestFixtures>({
     basePage: async ({ page }, use) => {
@@ -52,6 +57,24 @@ export const test = base.extend<TestFixtures>({
     suspendreCollabPage: async ({ basePage }, use) => {
         const suspendreCollab = new SuspendreCollabPage(basePage.page);
         await use(suspendreCollab);
+    },
+    verificationParamEcheanceSurSalPage: async ({ basePage }, use) => {
+        const verificationEcheanceSurSalPage = new VerificationParamEcheanceSurSalPage(basePage.page);
+        await use(verificationEcheanceSurSalPage);
+    },
+
+    verificationDiagrammeVueEnsemblePage: async ({ basePage }, use) => {
+        const verificationVueEnsemblePage = new VerificationDiagrammeVueEnsemblePage(basePage.page);
+        await use(verificationVueEnsemblePage);
+    },
+
+    verificationTableauStatutsPage: async ({ basePage }, use) => {
+        const verificationTableauStatutsPage = new VerificationTableauStatutsPage(basePage.page);
+        await use(verificationTableauStatutsPage);
+    },
+    filtrerSurDachboardPage: async ({ basePage }, use) => {
+        const filtrerSurDachboardPage = new FiltrerSurDachboardPage(basePage.page);
+        await use(filtrerSurDachboardPage);
     },
 
 });
