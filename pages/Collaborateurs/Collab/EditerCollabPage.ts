@@ -25,8 +25,10 @@ export class EditerCollabPage extends BasePage {
   await page.locator('.text').first().click();
   await page.locator('#dropdown-action > div > span:nth-child(2)').first().click();
 */
-       this.EditerBtn = page.getByRole('row', { name: '017 New collaborateur' }).locator('mat-icon').first();
-       this.EditerBtnbis= page.locator('#dropdown-action > div > span:nth-child(2)').first()
+      // this.EditerBtn = page.getByRole('row', { name: '017 New collaborateur' }).locator('mat-icon').first();
+      this.EditerBtn= page.locator('tr:nth-child(4) > td:nth-child(5) > .dropdown > .btn-edit-statut > .text > span').first(); 
+      this.EditerBtnbis= page.locator('tr:nth-child(4) > td:nth-child(5) > .dropdown > #dropdown-action > div:nth-child(1)');   
+     // this.EditerBtnbis= page.locator('#dropdown-action > div > span:nth-child(2)').first()
         this.collaboratorPrenom = page.getByLabel('Prénom');
         this.CollaboratorNom = page.getByPlaceholder('Doe');
         this.collaboratorPhone = page.getByLabel('Téléphone');
