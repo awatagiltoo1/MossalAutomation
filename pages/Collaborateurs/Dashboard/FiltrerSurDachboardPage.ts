@@ -39,27 +39,7 @@ export class FiltrerSurDachboardPage extends BasePage {
         await this.FiltreTabUser.click();
         await expect(this.FiltreNvoUser).toBeVisible();
         await expect(this.FiltreAvEnCours).toBeVisible();
-        
-        //await expect(this.Montant).toBeVisible();
-
-      
+              
     }
-    //dropdown-filter-user-list-saved
-
-
-    /*
-    import { test, expect } from '@playwright/test';
-
-test('test', async ({ page }) => {
-  await page.goto('https://app-dev.mossall.com/auth/login');
-  await page.getByPlaceholder('awafall@mossal.com').click();
-  await page.getByPlaceholder('awafall@mossal.com').fill('genieouzog+atos@gmail.com');
-  await page.getByPlaceholder('entrer votre mot de passe').click();
-  await page.getByPlaceholder('entrer votre mot de passe').fill('$Mossal1234');
-  await page.getByRole('button', { name: 'Se connecter' }).click();
-  await page.getByText('keyboard_arrow_down').click();
-  await page.getByLabel('Du').fill('2024-01-22');
-  await page.getByLabel('Au').fill('2025-12-31');
-});
-    */
+   
 }

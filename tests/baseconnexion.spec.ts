@@ -47,6 +47,14 @@ test('Dashboard: Verification tableau utilisateurs', async ({ verificationTablea
     await verificationTableauStatutsPage.VerificationTableauStatuts();
 });
 
-test('Dashboard: Vérification des filtre sur le dashboard', async ({ filtrerSurDachboardPage, page}) => {
+test('Dashboard: Vérification des filtres sur le dashboard', async ({ filtrerSurDachboardPage, page}) => {
     await filtrerSurDachboardPage.FiltrerSurDachboard();
+});
+
+test('Activités: Vérification colonnes de ta table Activité', async ({ verificationColonneActivitesPage, page}) => {
+    await verificationColonneActivitesPage.VerificationColonneActivites();
+});
+
+test('Activités: Recherche sur la table Activité', async ({ rechercheSurTabActivitePage, page}) => {
+    await rechercheSurTabActivitePage.RechercheSurTabActivite();
 });
