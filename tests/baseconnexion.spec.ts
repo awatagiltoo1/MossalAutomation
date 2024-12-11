@@ -11,6 +11,7 @@ const identifiant = faker.number.int({ min: 1000, max: 9999 })
 const telephone = faker.number.int({min: 1000000, max:9999999})
 const birthdayDate = faker.date.birthdate({ min: 18, max: 65, mode: 'age' });
 const birthday = birthdayDate.toISOString().split('T')[0];
+const profilAdresse = faker.location.streetAddress();
 //const phoneNumber = faker.phone.number('76#######');
 //verifier si a nvelle branche a été créé
 
@@ -56,5 +57,17 @@ test('Activités: Vérification colonnes de ta table Activité', async ({ verifi
 });
 
 test('Activités: Recherche sur la table Activité', async ({ rechercheSurTabActivitePage, page}) => {
-    await rechercheSurTabActivitePage.RechercheSurTabActivite();
+    await rechercheSurTabActivitePage.RechercheSurTabActivite('29/11/2024', '09:43:32');
+    //'29/11/2024'
+        //'09:43:32'
 });
+
+test('Mise à jour des données du profil connecté', async ({ modificationDonneesProfilPage, page}) => {
+    await modificationDonneesProfilPage.ModificationDonneesProfil('77' +telephone.toString(), profilAdresse);
+});
+
+test('Vérifier paramètres du profil connecté', async ({ verificationParamProfilPage, page}) => {
+    await verificationParamProfilPage.VerificationParamProfil();
+});
+
+

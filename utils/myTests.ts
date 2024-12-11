@@ -11,6 +11,9 @@ import { VerificationTableauStatutsPage } from '../pages/Collaborateurs/Dashboar
 import {FiltrerSurDachboardPage} from '../pages/Collaborateurs/Dashboard/FiltrerSurDachboardPage'
 import { VerificationColonneActivitesPage } from '../pages/Collaborateurs/Activites/VerificationColonneActivitesPage';
 import { RechercheSurTabActivitePage } from '../pages/Collaborateurs/Activites/RechercheSurTabActivitePage';
+import { ModificationDonneesProfilPage } from '../pages/Collaborateurs/CompteUtilisateur/ModificationDonneesProfilPage';
+import { VerificationParamProfilPage } from '../pages/Collaborateurs/CompteUtilisateur/VerificationParamProfilPage';
+
 
 type TestFixtures = {
     basePage: BasePage
@@ -25,6 +28,8 @@ type TestFixtures = {
     filtrerSurDachboardPage: FiltrerSurDachboardPage
     verificationColonneActivitesPage: VerificationColonneActivitesPage
     rechercheSurTabActivitePage: RechercheSurTabActivitePage
+    modificationDonneesProfilPage: ModificationDonneesProfilPage
+    verificationParamProfilPage: VerificationParamProfilPage
 }
 
 export const test = base.extend<TestFixtures>({
@@ -89,6 +94,16 @@ export const test = base.extend<TestFixtures>({
         const rechercheSurTabActivitePage = new RechercheSurTabActivitePage(basePage.page);
         await use(rechercheSurTabActivitePage);
     },
+
+    modificationDonneesProfilPage: async ({ basePage }, use) => {
+        const modificationDonneesProfilPage = new ModificationDonneesProfilPage(basePage.page);
+        await use(modificationDonneesProfilPage);
+    },
+    verificationParamProfilPage: async ({ basePage }, use) => {
+        const verificationParamProfilPage = new VerificationParamProfilPage(basePage.page);
+        await use(verificationParamProfilPage);
+    },
+
 
 });
 
