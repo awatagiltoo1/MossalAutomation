@@ -1,19 +1,14 @@
 import { faker } from '@faker-js/faker';
 import {test, expect } from '../utils/myTests';
 
-//import { CollaboratorPage } from '../pages/CollaboratorPage';
-
 const email = faker.internet.email();
 const prenom = faker.person.firstName();
 const nom = faker.person.lastName();
-//const password = faker.internet.password();
 const identifiant = faker.number.int({ min: 1000, max: 9999 })
 const telephone = faker.number.int({min: 1000000, max:9999999})
 const birthdayDate = faker.date.birthdate({ min: 18, max: 65, mode: 'age' });
 const birthday = birthdayDate.toISOString().split('T')[0];
 const profilAdresse = faker.location.streetAddress();
-//const phoneNumber = faker.phone.number('76#######');
-//verifier si a nvelle branche a été créé
 
 test.describe('TestSuite Collaborateurs', () => { 
 test('@MA-69 Ajout collaborateur', async ({ collaboratorPage, page}) => {
@@ -63,8 +58,6 @@ test('@MA-65 Activités: Vérification colonnes de ta table Activité', async ({
 
 test('@MA-66 Activités: Recherche sur la table Activité', async ({ rechercheSurTabActivitePage, page}) => {
     await rechercheSurTabActivitePage.RechercheSurTabActivite('29/11/2024', '09:43:32');
-    //'29/11/2024'
-        //'09:43:32'
 });
 
 });
@@ -80,14 +73,3 @@ test('@MA-68 Vérifier paramètres du profil connecté', async ({ verificationPa
     await verificationParamProfilPage.VerificationParamProfil();
 });
 });
-/*
-test.describe('two tests', () => {
-  test('one', async ({ page }) => {
-    // ...
-  });
-
-  test('two', async ({ page }) => {
-    // ...
-  });
-});
-*/

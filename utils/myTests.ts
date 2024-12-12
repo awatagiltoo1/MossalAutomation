@@ -14,7 +14,6 @@ import { RechercheSurTabActivitePage } from '../pages/Collaborateurs/Activites/R
 import { ModificationDonneesProfilPage } from '../pages/Collaborateurs/CompteUtilisateur/ModificationDonneesProfilPage';
 import { VerificationParamProfilPage } from '../pages/Collaborateurs/CompteUtilisateur/VerificationParamProfilPage';
 
-
 type TestFixtures = {
     basePage: BasePage
     collaboratorPage: CollaboratorPage
