@@ -48,7 +48,7 @@ export class AjouttAdminstrateur extends BasePage {
         await this.administrateurBankAccount.fill(bankAccount);
         await this.saveButton.click();
 
-
+// ht
 
 }
 }
