@@ -36,7 +36,7 @@ export const test = base.extend<TestFixtures>({
     basePage: async ({ page }, use) => {
         const basePage = new BasePage(page);
         await basePage.goto();
-        await basePage.login('genieouzog+atos@gmail.com', '$Mossal1234');
+        await basePage.login('genieouzog+atos@gmail.com', '$Mossall123');
         await use(basePage);
       //  await basePage.logout();
     },

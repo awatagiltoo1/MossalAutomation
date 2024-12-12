@@ -19,9 +19,9 @@ export class RechercheCollabPage extends BasePage {
        
     }
 
-    async RechercherdeCollab(searchCollab: string) {
+    async RechercherdeCollab(searchColab: string) {
         await this.collaboratorMenu.click();
-        await this.searchCollab.fill(searchCollab);
+        await this.searchCollab.fill(searchColab);
         await expect(this.nomCollabverifie).toBeVisible();
       
     }
