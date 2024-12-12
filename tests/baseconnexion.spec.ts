@@ -15,59 +15,79 @@ const profilAdresse = faker.location.streetAddress();
 //const phoneNumber = faker.phone.number('76#######');
 //verifier si a nvelle branche a été créé
 
-
-test('@MA-1 Ajout collaborateur', async ({ collaboratorPage, page}) => {
+test.describe('TestSuite Collaborateurs', () => { 
+test('@MA-69 Ajout collaborateur', async ({ collaboratorPage, page}) => {
     await collaboratorPage.addCollaborator(prenom, nom, email, '77' +telephone.toString(), birthday, identifiant.toString(), 'Testeur', '2000000', '123456789', 'WAVE');
 });
 
-test('Rechercher un collaborateur', async ({ rechercheCollabPage, page}) => {
+test('@MA-70 Rechercher un collaborateur', async ({ rechercheCollabPage, page}) => {
     await rechercheCollabPage.RechercherdeCollab('3886');
 });
 
-test('Fonctionnalite Bouton Import Fichier', async ({ importerTelechargerCollabPage, page}) => {
+test('@MA-71 Fonctionnalite Bouton Import Fichier', async ({ importerTelechargerCollabPage, page}) => {
     await importerTelechargerCollabPage.ImportGeneralFichier();
 });
 
-test('Editer un collaborateur', async ({ editerCollabPage, page}) => {
+test('@MA-72 Editer un collaborateur', async ({ editerCollabPage, page}) => {
     await editerCollabPage.EditerCollaborateur(prenom, nom, birthday, 'gestionnaire', '500000');
 });
 
-test('Suspendre un collaborateur', async ({ suspendreCollabPage, page}) => {
+test('@MA-73 Suspendre un collaborateur', async ({ suspendreCollabPage, page}) => {
     await suspendreCollabPage.SuspendreCollaborateur();
 });
+});
 
-test('Dashboard: Verification des paramètres du widget Echeances sur salaire', async ({ verificationParamEcheanceSurSalPage, page}) => {
+test.describe('TestSuite Dashboard', () => { 
+test('@MA-74 Dashboard: Verification des paramètres du widget Echeances sur salaire', async ({ verificationParamEcheanceSurSalPage, page}) => {
     await verificationParamEcheanceSurSalPage.VerificationParamEcheanceSurSal();
 });
 
-test('Dashboard: Verification de la vue d-ensemble du remboursement ', async ({ verificationDiagrammeVueEnsemblePage, page}) => {
+test('@MA-75 Dashboard: Verification de la vue d-ensemble du remboursement ', async ({ verificationDiagrammeVueEnsemblePage, page}) => {
     await verificationDiagrammeVueEnsemblePage.VerificationDiagrammeVueEnsemble();
 });
 
-test('Dashboard: Verification tableau utilisateurs', async ({ verificationTableauStatutsPage, page}) => {
+test('@MA-76 Dashboard: Verification tableau utilisateurs', async ({ verificationTableauStatutsPage, page}) => {
     await verificationTableauStatutsPage.VerificationTableauStatuts();
 });
 
-test('Dashboard: Vérification des filtres sur le dashboard', async ({ filtrerSurDachboardPage, page}) => {
+test('@MA-77 Dashboard: Vérification des filtres sur le dashboard', async ({ filtrerSurDachboardPage, page}) => {
     await filtrerSurDachboardPage.FiltrerSurDachboard();
 });
 
-test('Activités: Vérification colonnes de ta table Activité', async ({ verificationColonneActivitesPage, page}) => {
+});
+
+test.describe('TestSuite Activités', () => { 
+test('@MA-65 Activités: Vérification colonnes de ta table Activité', async ({ verificationColonneActivitesPage, page}) => {
     await verificationColonneActivitesPage.VerificationColonneActivites();
 });
 
-test('Activités: Recherche sur la table Activité', async ({ rechercheSurTabActivitePage, page}) => {
+test('@MA-66 Activités: Recherche sur la table Activité', async ({ rechercheSurTabActivitePage, page}) => {
     await rechercheSurTabActivitePage.RechercheSurTabActivite('29/11/2024', '09:43:32');
     //'29/11/2024'
         //'09:43:32'
 });
 
-test('Mise à jour des données du profil connecté', async ({ modificationDonneesProfilPage, page}) => {
+});
+
+
+test.describe('TestSuite Compte_Utilisateur', () => {
+
+test('@MA-67 Mise à jour des données du profil connecté', async ({ modificationDonneesProfilPage, page}) => {
     await modificationDonneesProfilPage.ModificationDonneesProfil('77' +telephone.toString(), profilAdresse);
 });
 
-test('Vérifier paramètres du profil connecté', async ({ verificationParamProfilPage, page}) => {
+test('@MA-68 Vérifier paramètres du profil connecté', async ({ verificationParamProfilPage, page}) => {
     await verificationParamProfilPage.VerificationParamProfil();
 });
+});
+/*
+test.describe('two tests', () => {
+  test('one', async ({ page }) => {
+    // ...
+  });
 
-
+  test('two', async ({ page }) => {
+    // ...
+  });
+});
+*/
