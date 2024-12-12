@@ -9,14 +9,9 @@ const telephone = faker.number.int({min: 1000000, max:9999999})
 const birthdayDate = faker.date.birthdate({ min: 18, max: 65, mode: 'age' });
 const birthday = birthdayDate.toISOString().split('T')[0];
 const profilAdresse = faker.location.streetAddress();
-<<<<<<< HEAD
-
-test.describe('TestSuite Collaborateurs', () => { 
-=======
 //const phoneNumber = faker.phone.number('76#######');
 //verifier si a nvelle branche a été créé
 test.describe('TestSuite Collaborateurs', () => {
->>>>>>> 5df3a2b32041e8de06a53adafbab592a8beeae7a
 test('@MA-69 Ajout collaborateur', async ({ collaboratorPage, page}) => {
     await collaboratorPage.addCollaborator(prenom, nom, email, '77' +telephone.toString(), birthday, identifiant.toString(), 'Testeur', '2000000', '123456789', 'WAVE');
 });
