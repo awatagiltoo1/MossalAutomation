@@ -13,6 +13,7 @@ import { VerificationColonneActivitesPage } from '../pages/Collaborateurs/Activi
 import { RechercheSurTabActivitePage } from '../pages/Collaborateurs/Activites/RechercheSurTabActivitePage';
 import { ModificationDonneesProfilPage } from '../pages/Collaborateurs/CompteUtilisateur/ModificationDonneesProfilPage';
 import { VerificationParamProfilPage } from '../pages/Collaborateurs/CompteUtilisateur/VerificationParamProfilPage';
+import { AjouttAdminstrateur } from '../pages/Administrateur/AjoutAdminstrateur';
 
 type TestFixtures = {
     basePage: BasePage
@@ -29,6 +30,7 @@ type TestFixtures = {
     rechercheSurTabActivitePage: RechercheSurTabActivitePage
     modificationDonneesProfilPage: ModificationDonneesProfilPage
     verificationParamProfilPage: VerificationParamProfilPage
+    ajouttAdminstrateur: AjouttAdminstrateur
 }
 
 export const test = base.extend<TestFixtures>({
@@ -102,6 +104,12 @@ export const test = base.extend<TestFixtures>({
         const verificationParamProfilPage = new VerificationParamProfilPage(basePage.page);
         await use(verificationParamProfilPage);
     },
+
+    ajouttAdminstrateur: async ({ basePage }, use) => {
+        const ajouttAdminstrateur = new AjouttAdminstrateur(basePage.page);
+        await use(ajouttAdminstrateur);
+    },
+
 
 
 });
