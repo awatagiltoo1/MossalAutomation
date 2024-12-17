@@ -14,6 +14,7 @@ import { RechercheSurTabActivitePage } from '../pages/Collaborateurs/Activites/R
 import { ModificationDonneesProfilPage } from '../pages/Collaborateurs/CompteUtilisateur/ModificationDonneesProfilPage';
 import { VerificationParamProfilPage } from '../pages/Collaborateurs/CompteUtilisateur/VerificationParamProfilPage';
 import { AjouttAdminstrateur } from '../pages/Administrateur/AjoutAdminstrateur';
+import { ValiderDemandePage } from '../pages/Collaborateurs/Demande/ValiderDemandePage';
 
 type TestFixtures = {
     basePage: BasePage
@@ -31,6 +32,7 @@ type TestFixtures = {
     modificationDonneesProfilPage: ModificationDonneesProfilPage
     verificationParamProfilPage: VerificationParamProfilPage
     ajouttAdminstrateur: AjouttAdminstrateur
+    validerDemandePage: ValiderDemandePage
 }
 
 export const test = base.extend<TestFixtures>({
@@ -110,7 +112,10 @@ export const test = base.extend<TestFixtures>({
         await use(ajouttAdminstrateur);
     },
 
-
+    validerDemandePage: async ({ basePage }, use) => {
+        const validerDemandePage = new ValiderDemandePage(basePage.page);
+        await use(validerDemandePage);
+    },
 
 });
 
