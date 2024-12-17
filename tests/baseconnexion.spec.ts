@@ -66,13 +66,9 @@ test.describe('TestSuite administrateur', () => {
     
     });
 
-/*
-test.describe('two tests', () => {
-  test('one', async ({ page }) => {
-    // ...
-  });
-  test('two', async ({ page }) => {
-    // ...
-  });
-});
-*/
+   /* test.describe('TestSuite Demande', () => {
+        test(' Valider une demande ', async ({ validerDemandePage, page}) => {
+            await validerDemandePage.ValiderDemande();
+        });
+        
+        });*/
