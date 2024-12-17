@@ -15,6 +15,10 @@ import { ModificationDonneesProfilPage } from '../pages/Collaborateurs/CompteUti
 import { VerificationParamProfilPage } from '../pages/Collaborateurs/CompteUtilisateur/VerificationParamProfilPage';
 import { AjouttAdminstrateur } from '../pages/Administrateur/AjoutAdminstrateur';
 import { ValiderDemandePage } from '../pages/Collaborateurs/Demande/ValiderDemandePage';
+import { RechercheAdminPage } from '../pages/Administrateur/RechercheAdminPage';
+import { ImporterTelechargerAdminPage } from '../pages/Administrateur/ImporterTelechargerAdminPage';
+import { EditionAdminPage } from '../pages/Administrateur/EditionAdminPage';
+import { SuspensionAdminPage } from '../pages/Administrateur/SuspensionAdminPage';
 
 type TestFixtures = {
     basePage: BasePage
@@ -33,6 +37,10 @@ type TestFixtures = {
     verificationParamProfilPage: VerificationParamProfilPage
     ajouttAdminstrateur: AjouttAdminstrateur
     validerDemandePage: ValiderDemandePage
+    rechercheAdminPage: RechercheAdminPage
+    importerTelechargerAdminPage: ImporterTelechargerAdminPage
+    editionAdminPage: EditionAdminPage
+    suspensionAdminPage: SuspensionAdminPage
 }
 
 export const test = base.extend<TestFixtures>({
@@ -116,6 +124,26 @@ export const test = base.extend<TestFixtures>({
         const validerDemandePage = new ValiderDemandePage(basePage.page);
         await use(validerDemandePage);
     },
+
+    
+    rechercheAdminPage: async ({ basePage }, use) => {
+        const rechercheAdminPage = new RechercheAdminPage(basePage.page);
+        await use(rechercheAdminPage);
+    },
+    importerTelechargerAdminPage: async ({ basePage }, use) => {
+        const importerTelechargerAdminPage = new ImporterTelechargerAdminPage(basePage.page);
+        await use(importerTelechargerAdminPage);
+    },
+
+    editionAdminPage: async ({ basePage }, use) => {
+        const editionAdminPage = new EditionAdminPage(basePage.page);
+        await use(editionAdminPage);
+    },
+    suspensionAdminPage: async ({ basePage }, use) => {
+        const suspensionAdminPage = new SuspensionAdminPage(basePage.page);
+        await use(suspensionAdminPage);
+    },
+
 
 });
 
