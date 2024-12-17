@@ -63,12 +63,22 @@ test.describe('TestSuite administrateur', () => {
     test(' Ajouter un administrateur', async ({ ajouttAdminstrateur, page}) => {
         await ajouttAdminstrateur.addAdministrateur(prenom,nom,email,'77' +telephone.toString(),'comptable',identifiant.toString(), '250000',identifiant.toString());
     });
+    test(' Rechercher un administrateur', async ({ rechercheAdminPage, page}) => {
+        await rechercheAdminPage.RechercheAdmin('2980');
+    })
+    test(' Importer un fichier', async ({ importerTelechargerAdminPage, page}) => {
+        await importerTelechargerAdminPage.ImporterTelechargerAdmin();
+    })
+
+    test(' Editer un administrateur', async ({ editionAdminPage, page}) => {
+        await editionAdminPage.EditionAdmin(prenom, nom, '77' +telephone.toString(), 'Gestionnaire', '500000');
+        
+    })
+
+    test(' Suspendre un administrateur', async ({ suspensionAdminPage, page}) => {
+        await suspensionAdminPage.SuspensionAdmin();
+        
+    })
     
     });
-
-   /* test.describe('TestSuite Demande', () => {
-        test(' Valider une demande ', async ({ validerDemandePage, page}) => {
-            await validerDemandePage.ValiderDemande();
-        });
-        
-        });*/
+ 
