@@ -19,32 +19,35 @@ import { RechercheAdminPage } from '../pages/Administrateur/RechercheAdminPage';
 import { ImporterTelechargerAdminPage } from '../pages/Administrateur/ImporterTelechargerAdminPage';
 import { EditionAdminPage } from '../pages/Administrateur/EditionAdminPage';
 import { SuspensionAdminPage } from '../pages/Administrateur/SuspensionAdminPage';
+import { ModificationParametreOrganisationPage } from '../pages/Organisation/ModificationParametreOrganisationPage';
+import { ModificationDateLimitePaiementPage } from '../pages/Organisation/ModificationDateLimitePaiementPage';
 import { VerificationOngletDashboardPage } from '../pages/OngletDashboard/VerificationOngletDashboardPage';
 
-type TestFixtures = {
-    basePage: BasePage
-    collaboratorPage: CollaboratorPage
-    rechercheCollabPage: RechercheCollabPage
-    importerTelechargerCollabPage: ImporterTelechargerCollabPage
-    editerCollabPage: EditerCollabPage
-    suspendreCollabPage: SuspendreCollabPage
-    verificationParamEcheanceSurSalPage: VerificationParamEcheanceSurSalPage
-    verificationDiagrammeVueEnsemblePage: VerificationDiagrammeVueEnsemblePage
-    verificationTableauStatutsPage: VerificationTableauStatutsPage
-    filtrerSurDachboardPage: FiltrerSurDachboardPage
-    verificationColonneActivitesPage: VerificationColonneActivitesPage
-    rechercheSurTabActivitePage: RechercheSurTabActivitePage
-    modificationDonneesProfilPage: ModificationDonneesProfilPage
-    verificationParamProfilPage: VerificationParamProfilPage
-    ajouttAdminstrateur: AjouttAdminstrateur
-    validerDemandePage: ValiderDemandePage
-    rechercheAdminPage: RechercheAdminPage
-    importerTelechargerAdminPage: ImporterTelechargerAdminPage
-    editionAdminPage: EditionAdminPage
-    suspensionAdminPage: SuspensionAdminPage
+export type TestFixtures = {
+    basePage: BasePage;
+    collaboratorPage: CollaboratorPage;
+    rechercheCollabPage: RechercheCollabPage;
+    importerTelechargerCollabPage: ImporterTelechargerCollabPage;
+    editerCollabPage: EditerCollabPage;
+    suspendreCollabPage: SuspendreCollabPage;
+    verificationParamEcheanceSurSalPage: VerificationParamEcheanceSurSalPage;
+    verificationDiagrammeVueEnsemblePage: VerificationDiagrammeVueEnsemblePage;
+    verificationTableauStatutsPage: VerificationTableauStatutsPage;
+    filtrerSurDachboardPage: FiltrerSurDachboardPage;
+    verificationColonneActivitesPage: VerificationColonneActivitesPage;
+    rechercheSurTabActivitePage: RechercheSurTabActivitePage;
+    modificationDonneesProfilPage: ModificationDonneesProfilPage;
+    verificationParamProfilPage: VerificationParamProfilPage;
+    ajouttAdminstrateur: AjouttAdminstrateur;
+    validerDemandePage: ValiderDemandePage;
+    rechercheAdminPage: RechercheAdminPage;
+    importerTelechargerAdminPage: ImporterTelechargerAdminPage;
+    editionAdminPage: EditionAdminPage;
+    suspensionAdminPage: SuspensionAdminPage;
+    modificationParametreOrganisationPage: ModificationParametreOrganisationPage;
+    modificationDateLimitePaiementPage: ModificationDateLimitePaiementPage;
     verificationOngletDashboardPage: VerificationOngletDashboardPage
-}
-
+};
 export const test = base.extend<TestFixtures>({
     basePage: async ({ page }, use) => {
         const basePage = new BasePage(page);
@@ -145,7 +148,15 @@ export const test = base.extend<TestFixtures>({
         const suspensionAdminPage = new SuspensionAdminPage(basePage.page);
         await use(suspensionAdminPage);
     },
-    verificationOngletDashboardPage: async ({ basePage }, use) => {
+    modificationParametreOrganisationPage: async ({ basePage }, use) => {
+        const modificationParametreOrganisationPage = new ModificationParametreOrganisationPage(basePage.page);
+        await use(modificationParametreOrganisationPage);
+    },
+    modificationDateLimitePaiementPage: async ({ basePage }, use) => {
+        const modificationDateLimitePaiementPage = new ModificationDateLimitePaiementPage(basePage.page);
+        await use(modificationDateLimitePaiementPage);
+    },
+verificationOngletDashboardPage: async ({ basePage }, use) => {
         const verificationOngletDashboardPage = new VerificationOngletDashboardPage(basePage.page);
         await use(verificationOngletDashboardPage);
     },
