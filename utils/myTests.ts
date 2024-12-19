@@ -21,6 +21,7 @@ import { EditionAdminPage } from '../pages/Administrateur/EditionAdminPage';
 import { SuspensionAdminPage } from '../pages/Administrateur/SuspensionAdminPage';
 import { ModificationParametreOrganisationPage } from '../pages/Organisation/ModificationParametreOrganisationPage';
 import { ModificationDateLimitePaiementPage } from '../pages/Organisation/ModificationDateLimitePaiementPage';
+import { VerificationOngletDashboardPage } from '../pages/OngletDashboard/VerificationOngletDashboardPage';
 
 export type TestFixtures = {
     basePage: BasePage;
@@ -45,6 +46,7 @@ export type TestFixtures = {
     suspensionAdminPage: SuspensionAdminPage;
     modificationParametreOrganisationPage: ModificationParametreOrganisationPage;
     modificationDateLimitePaiementPage: ModificationDateLimitePaiementPage;
+    verificationOngletDashboardPage: VerificationOngletDashboardPage
 };
 export const test = base.extend<TestFixtures>({
     basePage: async ({ page }, use) => {
@@ -154,7 +156,10 @@ export const test = base.extend<TestFixtures>({
         const modificationDateLimitePaiementPage = new ModificationDateLimitePaiementPage(basePage.page);
         await use(modificationDateLimitePaiementPage);
     },
-
+verificationOngletDashboardPage: async ({ basePage }, use) => {
+        const verificationOngletDashboardPage = new VerificationOngletDashboardPage(basePage.page);
+        await use(verificationOngletDashboardPage);
+    },
 
 });
 

@@ -9,7 +9,7 @@ const telephone = faker.number.int({min: 1000000, max:9999999})
 const birthdayDate = faker.date.birthdate({ min: 18, max: 65, mode: 'age' });
 const birthday = birthdayDate.toISOString().split('T')[0];
 const profilAdresse = faker.location.streetAddress();
-const pourcentage = faker.number.int({ min: 1, max: 100 })
+const pourcentage = faker.number.int({ min: 1, max: 100 });
 //const phoneNumber = faker.phone.number('76#######');
 //verifier si a nvelle branche a été créé
 test.describe('TestSuite Collaborateurs', () => {
@@ -83,11 +83,18 @@ test.describe('TestSuite administrateur', () => {
     
     });
  
-    test.describe('TestSuite Organisation', () => {
-        test('Modification parametre organisation', async ({ modificationParametreOrganisationPage, page}) => {
-            await modificationParametreOrganisationPage.ModificationParametreOrganisation(pourcentage.toString(), '400000');
+    test.describe('Onglets Dashboard', () => {
+        test('Verifier présence des onglets du menu du dashboard', async ({ verificationOngletDashboardPage, page}) => {
+            await verificationOngletDashboardPage.VerificationOngletDashboard();
         });
-        test('Modification date limite paiement', async ({ modificationDateLimitePaiementPage, page}) => {
-            await modificationDateLimitePaiementPage.ModificationDateLimitePaiement();
+        
         });
-        });
+        test.describe('TestSuite Organisation', () => {
+            test('Modification parametre organisation', async ({ modificationParametreOrganisationPage, page}) => {
+                await modificationParametreOrganisationPage.ModificationParametreOrganisation(pourcentage.toString(), '400000');
+            });
+            test('Modification date limite paiement', async ({ modificationDateLimitePaiementPage, page}) => {
+                await modificationDateLimitePaiementPage.ModificationDateLimitePaiement();
+            });
+            });
+    
