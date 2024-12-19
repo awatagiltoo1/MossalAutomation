@@ -19,6 +19,7 @@ import { RechercheAdminPage } from '../pages/Administrateur/RechercheAdminPage';
 import { ImporterTelechargerAdminPage } from '../pages/Administrateur/ImporterTelechargerAdminPage';
 import { EditionAdminPage } from '../pages/Administrateur/EditionAdminPage';
 import { SuspensionAdminPage } from '../pages/Administrateur/SuspensionAdminPage';
+import { VerificationOngletDashboardPage } from '../pages/OngletDashboard/VerificationOngletDashboardPage';
 
 type TestFixtures = {
     basePage: BasePage
@@ -41,6 +42,7 @@ type TestFixtures = {
     importerTelechargerAdminPage: ImporterTelechargerAdminPage
     editionAdminPage: EditionAdminPage
     suspensionAdminPage: SuspensionAdminPage
+    verificationOngletDashboardPage: VerificationOngletDashboardPage
 }
 
 export const test = base.extend<TestFixtures>({
@@ -143,7 +145,10 @@ export const test = base.extend<TestFixtures>({
         const suspensionAdminPage = new SuspensionAdminPage(basePage.page);
         await use(suspensionAdminPage);
     },
-
+    verificationOngletDashboardPage: async ({ basePage }, use) => {
+        const verificationOngletDashboardPage = new VerificationOngletDashboardPage(basePage.page);
+        await use(verificationOngletDashboardPage);
+    },
 
 });
 

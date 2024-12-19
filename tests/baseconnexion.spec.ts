@@ -82,3 +82,9 @@ test.describe('TestSuite administrateur', () => {
     
     });
  
+    test.describe('Onglets Dashboard', () => {
+        test('Verifier présence des onglets du menu du dashboard', async ({ verificationOngletDashboardPage, page}) => {
+            await verificationOngletDashboardPage.VerificationOngletDashboard();
+        });
+        
+        });
